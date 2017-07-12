@@ -1,3 +1,20 @@
+=head1 NPM package
+
+npm-creole is redesigned to work in node surrounding
+
+install:
+
+	npm install npm-creole
+
+usage:
+
+	var Creole = require('npm-creole'),
+		creole = new Creole(/*options*/);
+
+	console.log(creole.parse('= Header =')) //<h1>Header</h1>
+
+There are some mocha tests in tests lib. both test files are with .js ext
+
 
 =head1 NAME
 

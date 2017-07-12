@@ -1,0 +1,26 @@
+{
+  "name": "npm-creole",
+  "version": "0.3.1",
+  "description": "npm package for formatting wiki creole. fork of https://github.com/codeholic/jscreole/network",
+  "main": "lib/creole.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zibx/jscreole.git"
+  },
+  "author": "Zibx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zibx/jscreole/issues"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "assert": "*"
+  },
+  "homepage": "https://github.com/Zibx/jscreole#readme"
+}
