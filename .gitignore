@@ -1,0 +1,15 @@
+.idea/
+bin/
+bin/*
+build/
+build/*
+node_modules/
+.DS_Store
+Temp/*
+!Temp/holder
+public/*.js
+public/*.lal
+public/*.map
+public/*.qs.lal
+npm-debug.log
+.gitlab-ci.yml
