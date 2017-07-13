@@ -7,6 +7,21 @@
 // By zibx on 7/12/17.
 var tests = [
     {
+        name:   "underline",
+        input:  "__le__",
+        output: "<p><u>le</u></p>"
+    },
+    {
+        name:   "highlight",
+        input:  "!!orange!!!le!!",
+        output: "<p><span class=\"highlight orange\">le</span></p>"
+    },
+    {
+        name:   "highlight with custom class",
+        input:  "!!le!!",
+        output: "<p><span class=\"highlight\">le</span></p>"
+    },
+    {
         name:   "Basic paragraph markup",
         input:  "Basic paragraph test with <, >, & and \"",
         output: "<p>Basic paragraph test with &lt;, &gt;, &amp; and \"</p>"
