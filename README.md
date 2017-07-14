@@ -49,7 +49,7 @@ This module implements Creole 1.0 parser, as defined by
 
 ## Options
 
-** *defaultImageText* **
+***defaultImageText***
 
 Alternative text for an image with no alternative text
 
@@ -65,7 +65,7 @@ as opposed to empty alternative text
 
 Note that strict Creole 1.0 doesn't allow images with no alternative text.
 
-** *interwiki* **
+***interwiki***
 
 Interwiki map. Object properties' values are strings, arrays of one or two
 strings, or functions. The first string is a leading part
@@ -73,11 +73,11 @@ of the URL. If the second string is given as well, it is a
 trailing part. If the value is a function, which takes a link identifier as an
 argument, its return value is the whole URL.
 
-** *linkFormat* **
+***linkFormat***
 
 Internal links' format. Same format as in interwiki's properties.
 
-** *strict* **
+***strict***
 
 Whether the parser is strict Creole 1.0. For constructor only, i. e.
 non-overridable in C<parse> method. A non-strict parser allows images in tables
@@ -116,7 +116,7 @@ that can be then put in a document or traversed using standard DOM API.
 
 ## Parser
 
-** *new creole._base(grammar, options)* **
+***new creole._base(grammar, options)***
 
 The constructor creates a new parser object given a grammar and options.
 The grammar is an object of any type, which must contain a root property,
@@ -129,7 +129,7 @@ available in C<creole._base> is C<forIE>, which should be set C<true> for
 Microsoft Internet Explorer compatibility. Derived objects and subinterfaces
 may extend the C<options> object with their own options.
 
-** *parse(node, data, options)* **
+***parse(node, data, options)***
 
 This method parses flat text data and creates a DOM tree inside a given node,
 which should be a Node object. If options are passed, they override those
@@ -138,43 +138,43 @@ nested options is not supported.
 
 ## Rules
 
-** *item _regex* **
+***item _regex***
 
 A regular expression to match the input.
 
-** *_capture* **
+***_capture***
 
 What should be captured for the output data: 0 for the whole matched substring,
 1 and so on for corresponding capturing brackets. If not listed, data will be
 empty.
 
-** *_replaceRegex* **
+***_replaceRegex***
 
-** *_replaceString* **
+***_replaceString***
 
 If set, captured data will be processed before output.
 
-** *_tag* **
+***_tag***
 
 If set, captured data will be enclosed inside a new child element, otherwise
 they will be put in the current node.
 
-** *_attrs* **
+***_attrs***
 
 If set to an object, a new child element will have the given attributes.
 
-** *_children* **
+***_children***
 
 An array of grammar rules, which define possible child nodes.
 
-** *_fallback* **
+***_fallback***
 
 If there are chunks which don't match any child rule, they are being
 processed with this one.
 
 # AUTHOR
 
-Ivan Fomichev <F<ifomichev@gmail.com>>
+Ivan Fomichev ifomichev@gmail.com
 
 # COPYRIGHT
 
