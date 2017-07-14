@@ -1,21 +1,25 @@
 # NPM package
 
-npm-creole is redesigned to work in node surrounding
+npm-creole is redesigned jscreole. Now it can work serverside as node.js package.
 
 install:
 
 ```sh
-	npm install npm-creole
+npm install npm-creole
 ```
 
 usage:
 
 ```javascript
-	var Creole = require('npm-creole'),
-		creole = new Creole(/*options*/);
+var Creole = require('npm-creole'),
+	creole = new Creole(/*options*/);
 
-	console.log(creole.parse('= Header =')) //<h1>Header</h1>
+console.log(creole.parse('= Header =')) //<h1>Header</h1>
 ```
+
+Syntax was redesigned in such way that you can still use this package in browser.
+
+**No dependencies!**
 
 There are some mocha tests in tests lib. both test files are with .js ext
 
@@ -26,20 +30,20 @@ jscreole - Parse Creole into DOM
 # SYNOPSIS
 
 ```javascript
-  var creole = new creole({
-      interwiki: {
-          MeatballWiki: 'http://www.usemod.com/cgi-bin/mb.pl?',
-          TiddlyWiki: 'http://www.tiddlywiki.com/#',
-          WikiCreole: 'http://www.wikicreole.org/wiki/',
-          Palindrome: function(link) {
-                  return 'http://www.example.com/wiki/' + link.split('').reverse().join('');
-              }
-      },
-      linkFormat: '#'
-  });
+var creole = new creole({
+  interwiki: {
+	  MeatballWiki: 'http://www.usemod.com/cgi-bin/mb.pl?',
+	  TiddlyWiki: 'http://www.tiddlywiki.com/#',
+	  WikiCreole: 'http://www.wikicreole.org/wiki/',
+	  Palindrome: function(link) {
+			  return 'http://www.example.com/wiki/' + link.split('').reverse().join('');
+		  }
+  },
+  linkFormat: '#'
+});
 
-  var div = document.createElement('div');
-  creole.parse(div, "* This is [[Wikipedia:Wikitext|wikitext]]");
+var div = document.createElement('div');
+creole.parse(div, "* This is [[Wikipedia:Wikitext|wikitext]]");
 ```
 
 # DESCRIPTION
@@ -54,13 +58,13 @@ This module implements Creole 1.0 parser, as defined by
 Alternative text for an image with no alternative text
 
 ```creole
-  {{image.png}}
+{{image.png}}
 ```
 
 as opposed to empty alternative text
 
 ```creole
-  {{image.png|}}
+{{image.png|}}
 ```
 
 Note that strict Creole 1.0 doesn't allow images with no alternative text.
@@ -90,22 +94,22 @@ creole._base - Parse text into DOM
 # SYNOPSIS
 
 ```javascript
-  // Define grammar
-  var g = {
-      para: { _tag: 'p',
-          _regex: /([ \t]*\S.+((\r?\n|\r)[ \t]*\S.*)*)/, _capture: 0 }
-  };
-  g._root = { _children: [ g.para ] };
+// Define grammar
+var g = {
+  para: { _tag: 'p',
+	  _regex: /([ \t]*\S.+((\r?\n|\r)[ \t]*\S.*)*)/, _capture: 0 }
+};
+g._root = { _children: [ g.para ] };
 
-  // Create parser
-  var parser = new creole._base(g);
+// Create parser
+var parser = new creole._base(g);
 
-  // Parse
-  var div = document.createElement('div');
-  parser.parse(div, 'para\n' +
-                    ' continues\n\n' +
-                    'another para\n \n' +
-                    'yet another para');
+// Parse
+var div = document.createElement('div');
+parser.parse(div, 'para\n' +
+				' continues\n\n' +
+				'another para\n \n' +
+				'yet another para');
 ```
 
 # DESCRIPTION
@@ -129,7 +133,7 @@ available in C<creole._base> is C<forIE>, which should be set C<true> for
 Microsoft Internet Explorer compatibility. Derived objects and subinterfaces
 may extend the C<options> object with their own options.
 
-***parse(node, data, options)***
+***parse([node,] data, options)***
 
 This method parses flat text data and creates a DOM tree inside a given node,
 which should be a Node object. If options are passed, they override those

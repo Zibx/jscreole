@@ -1,13 +1,14 @@
 {
   "name": "npm-creole",
-  "version": "0.3.3",
-  "description": "npm package for formatting wiki creole. fork of https://github.com/codeholic/jscreole/network",
+  "version": "0.3.6",
+  "description": "npm package for parsing wiki creole. fork of https://github.com/codeholic/jscreole/network",
+  "keywords": ["creole", "formatting", "richtext", "serverside"],
   "main": "lib/creole.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/*.js --reporter spec"
   },
   "repository": {
     "type": "git",

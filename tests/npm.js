@@ -10,11 +10,6 @@ var creole = require('../lib/creole');
 describe('should work', function () {
     it('serverside', function () {
         var w = new creole();
-        assert.equal(w.parse('123'),'123');
-    });
-
-    it('serverside', function () {
-        var w = new creole();
-        assert.equal(w.parse('123'),'123');
+        assert.equal(w.parse('123'),'<p>123</p>');
     });
 });
